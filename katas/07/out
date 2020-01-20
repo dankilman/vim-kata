@@ -1,0 +1,3 @@
+Delete a chr in insert mode using <C-H>
+Delete a word in mode usingf <C-W>
+of line in insert mode using <C-U>

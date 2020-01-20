@@ -1,0 +1,6 @@
+// do *, then cw then %s with :%s//<C-R><C-W>/g
+
+var counter;
+for (counter=1; counter <= 10; counter++) {
+  // Do something with counter
+};

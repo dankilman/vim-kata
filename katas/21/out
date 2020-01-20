@@ -1,0 +1,3 @@
+var tpl = [
+  '<a href="#">Click Here</a>'
+]

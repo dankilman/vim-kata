@@ -1,0 +1,7 @@
+const enum TestkitType {
+  vanilla,
+  unidriver,
+  protractor,
+  puppeteer,
+  unknown,
+}

@@ -1,0 +1,7 @@
+const enum TestkitType {
+  vanilla = 'VANILLA',
+  unidriver = 'UNIDRIVER',
+  protractor = 'PROTRACTOR',
+  puppeteer = 'PUPPETEER',
+  unknown = 'UNKNOWN',
+}

@@ -1,0 +1,7 @@
+export const playground: (
+  object?: Partial<PlaygroundSection>,
+) => PlaygroundSection = config =>
+  baseSection({
+    type: SectionType.Playground,
+    ...config,
+  });

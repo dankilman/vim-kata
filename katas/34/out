@@ -1,0 +1,2 @@
+   copyRtL(destination, source);
+   copyRtL(nameVariable, "John Q. Public");
