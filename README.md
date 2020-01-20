@@ -50,7 +50,7 @@ The lower window is the output text. This is what your editing should look like.
 Once you are done with a kata, press `<C-J>` to load the next one. (`<C-K>` will reload the previous one).
 
 ## Configuration
-The `config.vim` file contains the configuration options for `vim-katas`.
+The `config.vim` file contains the configuration options for `vim-kata`.
 
 ## Adding Katas
 
