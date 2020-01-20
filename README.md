@@ -1,6 +1,6 @@
 # vim-kata
 
-A vimscript to help you improve your Vim memory muscle.
+A vimscript to help you improve your Vim muscle memory.
 
 ## Description
 
@@ -15,7 +15,7 @@ In addition to taking some of the katas directly from Vim Katas, I also borrowed
 
 The katas in this repo are not meant to be hard to solve. Quite the opposite. For each, there are usually
 several techniques that can be employed to simplify the task greatly. I believe that going over them
-frequently can help build memory muscle.
+frequently can help build muscle memory.
 
 I intend on adding a new kata every time I run into some new trick.
 
