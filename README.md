@@ -23,6 +23,7 @@ Contributions of new katas and fixes/improvements to the script are most welcome
 
 ## Demo
 
+![Screencast](https://github.com/dankilman/vim-kata/raw/master/doc/demo.gif)
 
 ## Requirements
 
