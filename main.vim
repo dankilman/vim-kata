@@ -27,6 +27,7 @@ endfunction
 
 function! KataNext()
     if s:current_kata >= len(s:kata_pairs) - 1
+        echo 'Already at last kata'
         return
     endif
     let s:current_kata += 1
@@ -35,6 +36,7 @@ endfunction
 
 function! KataPrevious()
     if s:current_kata <= 0
+        echo 'Already at first kata'
         return
     endif
     let s:current_kata -= 1
