@@ -8,11 +8,15 @@ nnoremap <silent> <C-K> :<C-U>call KataPrevious()<CR>
             
 function! LoadKatas()
     let result = []
-    let dirs = systemlist('ls katas')
+    let katas_dir = 'katas'
+    if exists('g:vim_kata_katas_dir')
+        let katas_dir = g:vim_kata_katas_dir
+    endif
+    let dirs = systemlist('ls '. katas_dir)
     for dir in dirs
-        let ext = readfile('katas/'.dir.'/ext')[0]
-        let in = 'katas/'.dir.'/in'
-        let out = 'katas/'.dir.'/out'
+        let ext = readfile(katas_dir.'/'.dir.'/ext')[0]
+        let in = katas_dir.'/'.dir.'/in'
+        let out = katas_dir.'/'.dir.'/out'
         call add(result, {'in': in, 'out': out, 'ext': ext})
     endfor
     if exists('g:vim_kata_shuffle') && g:vim_kata_shuffle
