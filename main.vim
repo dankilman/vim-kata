@@ -14,7 +14,11 @@ function! LoadKatas()
     endif
     let dirs = systemlist('ls '. katas_dir)
     for dir in dirs
-        let ext = readfile(katas_dir.'/'.dir.'/ext')[0]
+        let ext = 'txt'
+        let ext_path = katas_dir.'/'.dir.'/ext'
+        if filereadable(ext_path)
+            let ext = readfile(ext_path)[0]
+        endif
         let in = katas_dir.'/'.dir.'/in'
         let out = katas_dir.'/'.dir.'/out'
         call add(result, {'in': in, 'out': out, 'ext': ext})

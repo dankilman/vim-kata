@@ -57,6 +57,7 @@ The `config.vim` file contains the configuration options for `vim-kata`.
 All katas are stored in the `katas` directory.
 Each kata is a directory comprised of 3 files: `in`, `out` and `ext`.
 The `in` and `out` are self explanatory.
-The `ext` file contains the file extension that should be used.
+The `ext` file is optional. It contains the file extension that should be used.
 This is relevent when you want a certain kata to have syntax highlighting.
+If `ext` doesn't exist, `txt` extension is used.
 To add a kata, simply create a new directory with this structure.
