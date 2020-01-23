@@ -48,15 +48,23 @@ function! KataPrevious()
 endfunction
 
 function! LoadCurrentKata()
+    let diff_on = 0
+    if exists('g:vim_kata_diff_on')
+        let diff_on = g:vim_kata_diff_on
+    endif
     let pair = CreateWorkKata(s:kata_pairs[s:current_kata])
     let top_item = pair[0]
     let bottom_item = pair[1]
-    windo diffoff
+    if diff_on
+        windo diffoff
+    endif
     silent only
     execute 'edit '.top_item
     execute 'belowright split '.bottom_item
     setlocal nomodifiable
-    windo diffthis
+    if diff_on
+        windo diffthis
+    endif
     wincmd t
 endfunction
 
