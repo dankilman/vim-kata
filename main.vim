@@ -21,7 +21,7 @@ function! LoadKatas()
         endif
         let in = katas_dir.'/'.dir.'/in'
         let out = katas_dir.'/'.dir.'/out'
-        call add(result, {'in': in, 'out': out, 'ext': ext})
+        call add(result, {'in': in, 'out': out, 'ext': ext, 'dir': dir})
     endfor
     if exists('g:vim_kata_shuffle') && g:vim_kata_shuffle
         call Shuffle(result)
@@ -71,8 +71,8 @@ endfunction
 function! CreateWorkKata(conf)
     let file_in_content = readfile(a:conf.in)
     let file_out_content = readfile(a:conf.out)
-    let file_in = tempname() . '.in.' . a:conf.ext
-    let file_out = tempname() . '.out.' . a:conf.ext
+    let file_in = tempname() . '.' . a:conf.dir . '.in.' . a:conf.ext
+    let file_out = tempname() . '.' . a:conf.dir .'.out.' . a:conf.ext
     call writefile(file_in_content, file_in)
     call writefile(file_out_content, file_out)
     return [file_in, file_out]
