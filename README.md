@@ -47,7 +47,11 @@ The upper window is the input text. This is where you edit the text.
 
 The lower window is the output text. This is what your editing should look like. This buffer is `'unmodifiable'`.
 
-Once you are done with a kata, press `<C-J>` to load the next one. (`<C-K>` will reload the previous one).
+Once you are done with a kata:
+
+* `<C-J>` to load the next kata.
+* `<C-K>` to reload the previous kata.
+* `QQ` to quit (mapped to `qa!`).
 
 ## Configuration
 The `config.vim` file contains the configuration options for `vim-kata`.
