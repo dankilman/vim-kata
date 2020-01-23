@@ -3,7 +3,7 @@ source lib/shuffle.vim
 let s:current_kata = 0
 let s:kata_pairs = []
 
-nnoremap <silent> QQ :<C-U>qa!<CR>
+nnoremap <silent> ZQ :<C-U>qa!<CR>
 nnoremap <silent> <C-J> :<C-U>call KataNext()<CR>
 nnoremap <silent> <C-K> :<C-U>call KataPrevious()<CR>
             

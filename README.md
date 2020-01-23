@@ -51,7 +51,7 @@ Once you are done with a kata:
 
 * `<C-J>` to load the next kata.
 * `<C-K>` to reload the previous kata.
-* `QQ` to quit (mapped to `qa!`).
+* `ZQ` to quit (mapped to `qa!`).
 
 ## Configuration
 The `config.vim` file contains the configuration options for `vim-kata`.
