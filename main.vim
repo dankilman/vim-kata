@@ -61,6 +61,18 @@ function! LoadCurrentKata()
     endif
     silent only
     execute 'edit '.item_in
+    " place a literal ^K somewhere in the 'in' document to specify
+    " a custom cursor start location
+    let line_number = search('\%x0b')
+    if line_number
+        " remove ^K and clear undo history
+        normal dl
+        let old_undolevels = &undolevels
+        set undolevels=-1
+        exe "normal a \<BS>\<Esc>"
+        let &undolevels = old_undolevels
+        unlet old_undolevels
+    endif
     let split_command = 'belowright split'
     if exists('g:vim_kata_split_command')
         let split_command = g:vim_kata_split_command

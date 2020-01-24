@@ -59,9 +59,18 @@ The `config.vim` file contains the configuration options for `vim-kata`.
 ## Adding Katas
 
 All katas are stored in the `katas` directory.
+
 Each kata is a directory comprised of 3 files: `in`, `out` and `ext`.
 The `in` and `out` are self explanatory.
+
 The `ext` file is optional. It contains the file extension that should be used.
 This is relevent when you want a certain kata to have syntax highlighting.
 If `ext` doesn't exist, `txt` extension is used.
+
 To add a kata, simply create a new directory with this structure.
+
+### Custom cursor start location
+
+To have a kata start with the cursor positioned at a custom location,
+add a literal `<C-K>` (`^K`) to the `in` document (not the `out`!). The kata will load with the cursor
+at that position, and the literal `<C-K>` will be removed.
