@@ -54,14 +54,18 @@ function! LoadCurrentKata()
         let diff_on = g:vim_kata_diff_on
     endif
     let pair = CreateWorkKata(s:kata_pairs[s:current_kata])
-    let top_item = pair[0]
-    let bottom_item = pair[1]
+    let item_in = pair[0]
+    let item_out = pair[1]
     if diff_on
         windo diffoff
     endif
     silent only
-    execute 'edit '.top_item
-    execute 'belowright split '.bottom_item
+    execute 'edit '.item_in
+    let split_command = 'belowright split'
+    if exists('g:vim_kata_split_command')
+        let split_command = g:vim_kata_split_command
+    endif
+    execute split_command.' '.item_out
     setlocal nomodifiable
     if diff_on
         windo diffthis
