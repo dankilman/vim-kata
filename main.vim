@@ -24,7 +24,7 @@ function! LoadKatas()
         let out = katas_dir.'/'.dir.'/out'
         call add(result, {'in': in, 'out': out, 'ext': ext, 'dir': dir})
     endfor
-    if exists('g:vim_kata_shuffle') && g:vim_kata_shuffle
+    if !exists('g:vim_kata_shuffle') || g:vim_kata_shuffle
         call Shuffle(result)
     endif
     let s:kata_pairs = result
@@ -49,7 +49,7 @@ function! KataPrevious()
 endfunction
 
 function! LoadCurrentKata()
-    let diff_on = 0
+    let diff_on = 1
     if exists('g:vim_kata_diff_on')
         let diff_on = g:vim_kata_diff_on
     endif
