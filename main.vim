@@ -69,9 +69,8 @@ function! LoadCurrentKata()
         normal dl
         let old_undolevels = &undolevels
         set undolevels=-1
-        exe "normal a \<BS>\<Esc>"
+        execute "normal a \<BS>\<Esc>"
         let &undolevels = old_undolevels
-        unlet old_undolevels
     endif
     let split_command = 'belowright split'
     if exists('g:vim_kata_split_command')
