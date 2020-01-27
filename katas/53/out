@@ -1,0 +1,3 @@
+def hello(self):
+    """consider using I"""
+    self.some_method('Hello')
