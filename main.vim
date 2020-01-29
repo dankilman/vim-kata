@@ -3,9 +3,18 @@ source lib/shuffle.vim
 let s:current_kata = 0
 let s:kata_pairs = []
 
+let s:next_kata_mapping = '<C-J>'
+let s:previous_kata_mapping = '<C-K>'
+if exists('g:vim_kata_next_kata_mapping')
+    let s:next_kata_mapping = g:vim_kata_next_kata_mapping
+endif
+if exists('g:vim_kata_previous_kata_mapping')
+    let s:previous_kata_mapping = g:vim_kata_previous_kata_mapping
+endif
+execute 'nnoremap <silent> '.s:next_kata_mapping.' :<C-U>call KataNext()<CR>'
+execute 'nnoremap <silent> '.s:previous_kata_mapping.' :<C-U>call KataPrevious()<CR>'
+
 nnoremap <silent> ZQ :<C-U>qa!<CR>
-nnoremap <silent> <C-J> :<C-U>call KataNext()<CR>
-nnoremap <silent> <C-K> :<C-U>call KataPrevious()<CR>
             
 function! LoadKatas()
     let result = []
