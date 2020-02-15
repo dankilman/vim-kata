@@ -63,6 +63,8 @@ The tips are usually trying to strike a balance between fewer keystrokes, while 
 easier to reuse across different similar situations.
 They are not optimizing for minimal keystrokes like VimGolf does.
 
+Type `g?` to display tips for the current kata.
+
 ## Configuration
 
 The `config.vim` file contains the configuration options for `vim-kata`.

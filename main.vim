@@ -15,7 +15,14 @@ execute 'nnoremap <silent> '.s:next_kata_mapping.' :<C-U>call KataNext()<CR>'
 execute 'nnoremap <silent> '.s:previous_kata_mapping.' :<C-U>call KataPrevious()<CR>'
 
 nnoremap <silent> ZQ :<C-U>qa!<CR>
-            
+execute 'nnoremap g? :<C-U>call CurrentKataTip()<CR>'
+
+function! CurrentKataTip()
+    let current_conf = s:kata_pairs[s:current_kata]
+    let tips = current_conf.tips
+    echo tips
+endfunction
+
 function! LoadKatas()
     let result = []
     let katas_dir = 'katas'
@@ -29,9 +36,14 @@ function! LoadKatas()
         if filereadable(ext_path)
             let ext = readfile(ext_path)[0]
         endif
+        let tips = ''
+        let tips_path = katas_dir.'/'.dir.'/tips'
+        if filereadable(tips_path)
+            let tips = join(readfile(tips_path), "\n")
+        endif
         let in = katas_dir.'/'.dir.'/in'
         let out = katas_dir.'/'.dir.'/out'
-        call add(result, {'in': in, 'out': out, 'ext': ext, 'dir': dir})
+        call add(result, {'in': in, 'out': out, 'ext': ext, 'dir': dir, 'tips': tips})
     endfor
     if !exists('g:vim_kata_shuffle') || g:vim_kata_shuffle
         call Shuffle(result)
@@ -62,7 +74,8 @@ function! LoadCurrentKata()
     if exists('g:vim_kata_diff_on')
         let diff_on = g:vim_kata_diff_on
     endif
-    let pair = CreateWorkKata(s:kata_pairs[s:current_kata])
+    let current_conf = s:kata_pairs[s:current_kata]
+    let pair = CreateWorkKata(current_conf)
     let item_in = pair[0]
     let item_out = pair[1]
     if diff_on
