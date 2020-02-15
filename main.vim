@@ -19,7 +19,11 @@ execute 'nnoremap g? :<C-U>call CurrentKataTip()<CR>'
 
 function! CurrentKataTip()
     let current_conf = s:kata_pairs[s:current_kata]
-    let tips = current_conf.tips
+    let tips = ''
+    let tips_path = current_conf.tips
+    if filereadable(tips_path)
+        let tips = join(readfile(tips_path), "\n")
+    endif
     echo tips
 endfunction
 
@@ -36,13 +40,9 @@ function! LoadKatas()
         if filereadable(ext_path)
             let ext = readfile(ext_path)[0]
         endif
-        let tips = ''
-        let tips_path = katas_dir.'/'.dir.'/tips'
-        if filereadable(tips_path)
-            let tips = join(readfile(tips_path), "\n")
-        endif
         let in = katas_dir.'/'.dir.'/in'
         let out = katas_dir.'/'.dir.'/out'
+        let tips = katas_dir.'/'.dir.'/tips'
         call add(result, {'in': in, 'out': out, 'ext': ext, 'dir': dir, 'tips': tips})
     endfor
     if !exists('g:vim_kata_shuffle') || g:vim_kata_shuffle
