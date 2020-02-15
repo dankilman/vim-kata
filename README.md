@@ -53,7 +53,18 @@ Once you are done with a kata:
 * `<C-K>` to reload the previous kata.
 * `ZQ` to quit (mapped to `qa!`).
 
+## Tips
+
+Each kata in the `katas` dir includes an additional `tips` file.
+
+This file gives an informal description of the key sequences I tend to use when doing the kata.
+
+The tips are usually trying to strike a balance between fewer keystrokes, while remaining pragmatic and
+easier to reuse across different similar situations.
+They are not optimizing for minimal keystrokes like VimGolf does.
+
 ## Configuration
+
 The `config.vim` file contains the configuration options for `vim-kata`.
 
 ## Adding Katas

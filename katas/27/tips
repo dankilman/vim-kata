@@ -1,0 +1,6 @@
+(assumes vim-surround is installed)
+- cs'"
+- j..
+- <CR>
+- f'r"
+- ;;.

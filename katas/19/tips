@@ -1,0 +1,4 @@
+- /ta<CR>
+- *
+- ciwcounter<Esc>
+- :%s//<C-R><C-W>/g<CR>

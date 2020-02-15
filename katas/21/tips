@@ -1,0 +1,3 @@
+(assumes vim-targets is installed)
+- ci"#<Esc>
+- citClick Here<Esc>

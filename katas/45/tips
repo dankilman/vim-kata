@@ -1,0 +1,6 @@
+- wa<CR><C-D><Esc>w
+- qqyiwwi=<C-R>0<Esc>wa<CR><Esc>wq
+- 4@q
+- dd
+- $i,
+- <CR><C-D><Esc>

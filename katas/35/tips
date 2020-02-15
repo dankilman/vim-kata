@@ -1,0 +1,10 @@
+#1
+- fa
+- <C-V>2jI"<Esc>
+- gv$A"
+
+#2
+(assumes vim-surround is installed)
+- fa
+- ysw"
+- j.j.

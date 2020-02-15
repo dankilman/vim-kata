@@ -1,0 +1,5 @@
+(assumes vim-surround is installed)
+- <C-V>t(4jd
+- l
+- <C-v>t_4jd
+- VG:norm ds(

@@ -1,0 +1,8 @@
+#1
+(assumes vim-targets is installed)
+- ci/components<Esc>
+- j.j.
+
+#2
+- f/l
+- <C-V>2jeccomponents<Esc>

@@ -1,0 +1,8 @@
+(assumes vim-targets is installed for dia)
+- qq
+- dia
+- mm
+- wvep
+- `mP
+- q<CR>
+- @q
