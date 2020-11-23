@@ -51,7 +51,7 @@ Once you are done with a kata:
 
 * `<C-J>` to load the next kata.
 * `<C-K>` to reload the previous kata.
-* `<C-G>` to load a specific kata by directory name (thanks @oflisback).
+* `<C-G>` to load a specific kata by directory name (thanks [@oflisback](https://github.com/oflisback)).
 * `ZQ` to quit (mapped to `qa!`).
 
 ## Tips
