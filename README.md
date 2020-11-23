@@ -81,7 +81,7 @@ The `ext` file is optional. It contains the file extension that should be used.
 This is relevent when you want a certain kata to have syntax highlighting.
 If `ext` doesn't exist, `txt` extension is used.
 
-If `tips` exists, it will display when typing `g?`.
+If `tips` exists, it will displayed when typing `g?`.
 
 To add a kata, simply create a new directory with this structure.
 
