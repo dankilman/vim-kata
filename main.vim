@@ -5,14 +5,19 @@ let s:kata_pairs = []
 
 let s:next_kata_mapping = '<C-J>'
 let s:previous_kata_mapping = '<C-K>'
+let s:goto_kata_mapping = '<C-G>'
 if exists('g:vim_kata_next_kata_mapping')
     let s:next_kata_mapping = g:vim_kata_next_kata_mapping
 endif
 if exists('g:vim_kata_previous_kata_mapping')
     let s:previous_kata_mapping = g:vim_kata_previous_kata_mapping
 endif
+if exists('g:vim_kata_goto_kata_mapping')
+    let s:goto_kata_mapping = g:vim_kata_goto_kata_mapping
+endif
 execute 'nnoremap <silent> '.s:next_kata_mapping.' :<C-U>call KataNext()<CR>'
 execute 'nnoremap <silent> '.s:previous_kata_mapping.' :<C-U>call KataPrevious()<CR>'
+execute 'nnoremap <silent> '.s:goto_kata_mapping.' :<C-U>call KataGoto()<CR>'
 
 nnoremap <silent> ZQ :<C-U>qa!<CR>
 execute 'nnoremap g? :<C-U>call CurrentKataTip()<CR>'
@@ -67,6 +72,21 @@ function! KataPrevious()
     endif
     let s:current_kata -= 1
     call LoadCurrentKata()
+endfunction
+
+function! KataGoto()
+  call inputsave()
+  let dir = input('Enter kata directory: ')
+  call inputrestore()
+  let kata_dirs = map(copy(s:kata_pairs), 'v:val.dir')
+  let i = index(kata_dirs, dir)
+  if i == -1
+    redraw
+    echo 'Kata directory not found: ' . dir
+    return
+  endif
+  let s:current_kata = i
+  call LoadCurrentKata()
 endfunction
 
 function! LoadCurrentKata()

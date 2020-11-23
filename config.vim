@@ -4,3 +4,4 @@
 " let g:vim_kata_split_command = 'belowright split'
 " let g:vim_kata_next_kata_mapping = '<C-J>'
 " let g:vim_kata_previous_kata_mapping = '<C-K>'
+" let g:vim_kata_goto_kata_mapping = '<C-G>'
