@@ -51,6 +51,7 @@ Once you are done with a kata:
 
 * `<C-J>` to load the next kata.
 * `<C-K>` to reload the previous kata.
+* `<C-G>` to load a specific kata by directory name (thanks @oflisback).
 * `ZQ` to quit (mapped to `qa!`).
 
 ## Tips
@@ -73,12 +74,14 @@ The `config.vim` file contains the configuration options for `vim-kata`.
 
 All katas are stored in the `katas` directory.
 
-Each kata is a directory comprised of 3 files: `in`, `out` and `ext`.
+Each kata is a directory comprised of 4 files: `in`, `out`, `ext` and `tips`.
 The `in` and `out` are self explanatory.
 
 The `ext` file is optional. It contains the file extension that should be used.
 This is relevent when you want a certain kata to have syntax highlighting.
 If `ext` doesn't exist, `txt` extension is used.
+
+If `tips` exists, it will display when typing `g?`.
 
 To add a kata, simply create a new directory with this structure.
 
